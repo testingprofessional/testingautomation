@@ -55,13 +55,13 @@ jobs:
       #      ./node_modules/.bin/webdriver-manager start --(Chrome Version)
       #    background: true
 
-      - run: sleep 30
+      - run: sleep 10
 
 
       - run:
           name: Test Run
           command: |
-            protractor conf.js
+            protractor .circleci/conf.js
 
 
 workflows:
