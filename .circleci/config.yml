@@ -51,8 +51,8 @@ jobs:
           name: WebDriver Update
           command: |      
             ./node_modules/.bin/webdriver-manager clean
-            ./node_modules/.bin/webdriver-manager update --(Chrome Version)
-            ./node_modules/.bin/webdriver-manager start --(Chrome Version)
+            ./node_modules/.bin/webdriver-manager update --106.0.5249.119
+            ./node_modules/.bin/webdriver-manager start --106.0.5249.119
           background: true
 
       - run: sleep 10
