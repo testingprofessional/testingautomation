@@ -26,9 +26,47 @@ jobs:
       - node/install-packages:
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
+      #- run:
+      #    name: Run tests
+      #    command: npm test
+      - run: google-chrome --version 71.0.3578.98
+      
+      - save_cache:
+          key: node_modules-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - "node_modules"
+            - "./node_modules"
+
+
       - run:
-          name: Run tests
-          command: npm test
+          name: NPM Install
+          command: |
+            npm install
+
+
+      - run:
+          name: Install Protractor
+          command: |
+            sudo npm i -g protractor
+
+
+      - run:
+          name: WebDriver Update
+          command: |      
+            ./node_modules/.bin/webdriver-manager clean
+            ./node_modules/.bin/webdriver-manager update --(Chrome Version)
+            ./node_modules/.bin/webdriver-manager start --(Chrome Version)
+          background: true
+
+
+      - run: sleep 30
+
+
+      - run:
+          name: Test Run
+          command: |
+            protractor Conf.js
+
 
 workflows:
   # Below is the definition of your workflow.
