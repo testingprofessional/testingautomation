@@ -18,5 +18,8 @@
   "homepage": "https://github.com/testingprofessional/testingautomation#readme",
   "devDependencies": {
     "ftp-deploy": "^2.4.3"
+  },
+  "dependencies": {
+    "protractor": "^7.0.0"
   }
 }
