@@ -7,6 +7,7 @@ orbs:
   # Orbs reduce the amount of configuration required for common tasks.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/node
   node: circleci/node@4.7
+  cypress: cypress-io/cypress@2
 
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
@@ -26,43 +27,6 @@ jobs:
       - node/install-packages:
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
-      #- run:
-      #    name: Run tests
-      #    command: npm test
-      - save_cache:
-          key: node_modules-{{ .Branch }}-{{ checksum "package-lock.json" }}
-          paths:
-            - "node_modules"
-            - "./node_modules"
-
-
-      - run:
-          name: NPM Install
-          command: |
-            npm install
-
-
-      - run:
-          name: Install Protractor
-          command: |
-            sudo npm i -g protractor
-
-      - run:
-          name: WebDriver Update
-          command: |      
-            ./node_modules/.bin/webdriver-manager clean
-            ./node_modules/.bin/webdriver-manager update --106.0.5249.119
-            ./node_modules/.bin/webdriver-manager start --106.0.5249.119
-          background: true
-
-      - run: sleep 10
-
-
-      - run:
-          name: Test Run
-          command: |
-            protractor .circleci/conf.js
-
 
 workflows:
   # Below is the definition of your workflow.
