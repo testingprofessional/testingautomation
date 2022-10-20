@@ -47,13 +47,13 @@ jobs:
           command: |
             sudo npm i -g protractor
 
-      #- run:
-      #    name: WebDriver Update
-      #    command: |      
-      #      ./node_modules/.bin/webdriver-manager clean
-      #      ./node_modules/.bin/webdriver-manager update --(Chrome Version)
-      #      ./node_modules/.bin/webdriver-manager start --(Chrome Version)
-      #    background: true
+      - run:
+          name: WebDriver Update
+          command: |      
+            ./node_modules/.bin/webdriver-manager clean
+            ./node_modules/.bin/webdriver-manager update --(Chrome Version)
+            ./node_modules/.bin/webdriver-manager start --(Chrome Version)
+          background: true
 
       - run: sleep 10
 
