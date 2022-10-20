@@ -61,7 +61,7 @@ jobs:
       - run:
           name: Test Run
           command: |
-            protractor Conf.js
+            protractor conf.js
 
 
 workflows:
