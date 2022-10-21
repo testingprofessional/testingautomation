@@ -1,6 +1,6 @@
 describe('Mainpage check', () => {
   before(function() {
-    cy.visit("/")
+    cy.visit("https://testingautomation.nl")
   })
 
   it("verify the status of the site", function() {
