@@ -1,6 +1,6 @@
 describe('Mainpage check', () => {
   before(function() {
-    cy.visit("https://testingautomation.nl")
+    cy.visit("/")
   })
 
   beforeEach(function() {
@@ -22,8 +22,8 @@ describe('Mainpage check', () => {
 
   it("verfiy the image on the site", function() {
     console.log(this.sampleData, "Plan")
-    cy.get("img/Plan.png")
+    cy.get("img")
       .should("have.attr", "src")
-      .and("include", this.sample.imageName)
+      .and("include", this.sampleData.imageName)
   })
 })
