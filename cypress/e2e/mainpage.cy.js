@@ -8,4 +8,9 @@ describe('Mainpage check', () => {
       expect(response.status).to.eq(200)
     })
   })
+
+  it("The site cointains 2 links", function() {
+    cy.contains('qualitygate.nl'),
+    cy.contains('qaconsultant.nl')
+  })
 })
