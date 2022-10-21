@@ -17,7 +17,8 @@ describe('Mainpage check', () => {
 
   it("The site contains 2 links", function() {
     cy.contains('qualitygate.nl'),
-    cy.contains('qaconsultant.nl')
+    cy.contains('qaconsultant.nl'),
+    cy.contains('testing').should('not.exist')
   })
 
   it("Verfiy the image on the site", function() {
