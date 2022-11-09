@@ -1,3 +1,4 @@
+//DUMMY
 describe('Second page check', () => {
     before(function() {
       cy.visit("/")
