@@ -9,6 +9,7 @@ jobs:
     docker:
       - image: cimg/node:16.10
     steps:
+      - run: echo "WE'RE STARTING INSTALLING NPM"
       - checkout
       - node/install-packages:
           pkg-manager: npm
