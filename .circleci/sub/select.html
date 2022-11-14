@@ -2,16 +2,32 @@
 <html>
     <head>
         <style>
-        div {text-align: center;}
+        .container {border: 5px outset red;
+                    background-color: lightblue;
+                    text-align: center;}
+        .cars {border: 5px outset red;
+                background-color: blue;
+                text-align: center;}
+        .button {
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                }
+        .button1 {background-color: #4CAF50;} /* Green */
         </style>
     </head>
 <body>
-    <div class="container"></div>
+    <div class="container">
         <h1>The select element:</h1>
-
-        <p>The select element is used to create a drop-down list.</p>
-        
-        <form action="/action_page.php">
+        </br>
+        <form>
+            <button class="button button1" id="button1">Click Me!</button>
         <label for="cars">Choose a car:</label>
         <select name="cars" id="cars">
             <option value="volvo">Volvo</option>
@@ -19,22 +35,49 @@
             <option value="opel">Opel</option>
             <option value="audi">Audi</option>
         </select>
-        </form>
-
-    </br></br>
-
+        </br>
         <h1>Checkbox elements:</h1>
-
-        <form method="post" action="/Tests/Post/">      
+        </br>
             <fieldset>      
                 <legend>What is Your Favorite Pet?</legend>      
                 <input type="checkbox" name="favorite_pet" value="Cats">Cats<br>      
                 <input type="checkbox" name="favorite_pet1" value="Dogs">Dogs<br>      
                 <input type="checkbox" name="favorite_pet2" value="Birds">Birds<br>        
-            </fieldset>      
-        </form>
-
+            </fieldset>  
+        </br>
+            <input type="radio" id="ca-country" value="CA" />
+            <label for="ca-country">Canada</label>
+            <input type="radio" id="ca-country" value="US" />
+            <label for="ca-country">US</label>
+        </br>
+        <h1>Example of HTML optgroup tag:</h1>
+        </br>
+            <select>
+                <optgroup label="Sports cars">
+                    <option value="ferrari">Ferrari</option>
+                    <option value="lamborghini">Lamborghini</option>
+                </optgroup>
+                <optgroup label="Luxury cars">
+                    <option value="mercedes">Mercedes</option>
+                    <option value="bentley">Bentley</option>
+                </optgroup>
+            </select>
+        </br>
+        <h1>HTML Submit and Reset Buttons:</h1>
+        </br>
+            <label for="first-name">First Name:</label>
+            <input type="text" name="first-name" id="first-name">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
     </div>
-
+    <div class="cars">
+        <form>
+            <select name="selectedCars" id="selectedCars">
+                <option value="ferrari">Ferrari</option>
+                <option value="mercedes" selected="selected">Mercedes</option>
+                <option value="porsche">Porsche</option>
+            </select>
+        </form>
+    </div>
 </body>
 </html>

@@ -1,3 +1,4 @@
+//npx cypress run
 describe('Mainpage check', () => {
   before(function() {
     cy.visit("/")
