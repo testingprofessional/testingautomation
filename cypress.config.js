@@ -2,6 +2,6 @@ const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   e2e: {
-    "baseUrl": "https://testingautomation.nl"
+    //"baseUrl": "https://testingautomation.nl"
   }
 })

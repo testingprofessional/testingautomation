@@ -1,7 +1,7 @@
 //npx cypress run
 describe('Mainpage check', () => {
   before(function() {
-    cy.visit("/")
+    cy.visit("../.circleci/index.html")
   })
 
   beforeEach(function() {

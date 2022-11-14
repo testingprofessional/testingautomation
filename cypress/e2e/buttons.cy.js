@@ -1,6 +1,6 @@
 describe('Buttons page check', () => {
     before(function() {
-      cy.visit("/sub/buttons.html")
+      cy.visit("../.circleci/sub/buttons.html")
     })
 
     it("Verify the status of the select page", function() {
