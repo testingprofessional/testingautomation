@@ -34,4 +34,8 @@ describe('Select page check', () => {
       cy.get('select#selectedCars').select('Mercedes').should('have.value', 'mercedes')
     })
 
+    it("Verify the functionality of the input (textfield) and reset functionality", function() {
+      cy.get('#first-name').should('not.have.text', 'checking')
+      cy.get('#w3review').should('have.text', 'Checking')
+    })
   })
