@@ -38,4 +38,11 @@ describe('Select page check', () => {
       cy.get('#first-name').should('not.have.text', 'checking')
       cy.get('#w3review').should('have.text', 'Checking')
     })
+
+    it("Verify the functionality of the input (textfield) and submit functionality", function() {
+      cy.get('#value').should('not.have.text', 'checking')
+      cy.get('#value').type('checking')
+      cy.get('input[type=button]').click()
+      cy.get('#x').should('have.text', 'checking')
+    })
   })
