@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        .container {border: 5px outset red;
+                    background-color: lightblue;
+                    text-align: left;}
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <h1>API testing:</h1>
+    </br>
+        <h4>1) API testing an endpoint with response {"age":32,"count":21,"name":"meelad"}:</h4>
+            <h5 style="color:rgb(129, 96, 96);">
+                &nbsp;it("Verify the status of the selected endpoint", function() {</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;cy.request({</br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; method: 'GET',</br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; url: 'https://api.agify.io/?name=meelad',</br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}).then( ({ status }) => {</br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(status).to.eq(200)</br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;})</br>
+                            &nbsp;&nbsp;})
+            </br> </br>
+            &nbsp;it("Verify the body of the response", function() {</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;cy.request({</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; method: 'GET',</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: 'https://api.agify.io/?name=meelad',</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}).should((response) => {</br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;cy.log(JSON.stringify(response.body))</br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;expect(response.body.age).to.not.be.null</br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;expect(response.body.age).to.eq(32)</br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;expect(response.body.count).to.eq(21)</br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;expect(response.body.name).to.eq("meelad")</br>
+                        &nbsp;&nbsp;&nbsp;})</br>
+                        &nbsp;&nbsp;})</br>
+                        &nbsp;})
+            </h5>
+</body>
+</html>
