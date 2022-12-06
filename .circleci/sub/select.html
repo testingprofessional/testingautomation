@@ -36,21 +36,9 @@
             <input type="radio" id="ca-country" value="US" />
             <label for="ca-country">US</label>
         </br>
-        <h1>3) Example of HTML optgroup tag:</h1>
+        <h1>3) Submit and Reset Buttons:</h1>
         </br>
-            <select>
-                <optgroup label="Sports cars">
-                    <option value="ferrari">Ferrari</option>
-                    <option value="lamborghini">Lamborghini</option>
-                </optgroup>
-                <optgroup label="Luxury cars">
-                    <option value="mercedes">Mercedes</option>
-                    <option value="bentley">Bentley</option>
-                </optgroup>
-            </select>
-        </br>
-        <h1>4) HTML Submit and Reset Buttons:</h1>
-        </br>
+        <h2>Part 1</h2>
             <label for="first-name">Input:</label>
             <input type="text" name="first-name" id="first-name">
             <input type="reset" value="Reset">
@@ -61,13 +49,14 @@
             <input type="submit" value="Submit">
           </form>
     </br>
+        <h2>Part 2</h2>
         <p id="x"></p><br>
             <input id="value"><input type="button" value="submit" onClick="getV()">
         <script>
         function getV(){document.getElementById("x").innerHTML = document.getElementById("value").value;}
         </script>
     </br>
-    <h1>5) Select element with pre-selected element:</h1>
+    <h1>4) Select element with pre-selected element:</h1>
     </br>
         <select name="selectedCars" id="selectedCars">
             <option value="ferrari">Ferrari</option>
@@ -78,7 +67,7 @@
 
     <div class="cars" style="width: 700px; float:left; height:950px; background:yellow; margin:10px">
         <h4>1) The select statement:</h4>
-            <h5>
+            <h5 style="color:rgb(129, 96, 96);">
                 &nbsp;it("Verify the functionality of the existing container class", function() {</br>
                 &nbsp;&nbsp;&nbsp;&nbsp;cy.get('div').should('have.class', 'container')
               })
@@ -88,7 +77,7 @@
               })
             </h5>
         <h4>2) Checkbox elements:</h4>
-            <h5>
+            <h5 style="color:rgb(129, 96, 96);">
                 &nbsp;it("Verify the functionality of the basic checkbox element", function() {</br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cy.get('[type="checkbox"]').check('Dogs').should('have.value', 'Dogs')
                 })
@@ -98,8 +87,24 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cy.get('[type="radio"]').check("US")
                 })
             </h5>
-            <h4>5) Select element with pre-selected element:</h4>
-            <h5>
+            <h4>3) Submit and Reset Buttons:</h4>
+            <h5 style="color:rgb(129, 96, 96);">
+                part 1 </br>
+                &nbsp;it("Verify the functionality of the input (textfield) and reset functionality", function() {</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cy.get('#first-name').should('not.have.text', 'checking')</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cy.get('#w3review').should('have.text', 'Checking')
+                })
+        </br></br>     
+                part 2 </br>
+                &nbsp;it("Verify the functionality of the input (textfield) and submit functionality", function() {</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cy.get('#value').should('not.have.text', 'checking')</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cy.get('#value').type('checking')</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cy.get('input[type=button]').click()</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cy.get('#x').should('have.text', 'checking')
+                })
+            </h5>
+            <h4>4) Select element with pre-selected element:</h4>
+            <h5 style="color:rgb(129, 96, 96);">
                 &nbsp;it("Verify the functionality of the existing cars class", function() {</br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cy.get('div').should('have.class', 'cars')
                 })
